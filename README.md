@@ -24,6 +24,7 @@ Controls:
 Arrow keys - Move
 Z - Undo previous move
 Q - Quit game
+```
 
 ## Level files
 ### File format
