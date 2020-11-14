@@ -19,7 +19,7 @@ using std::string;
 int main(int argc, char *argv[]) {
 	// Checking to see if we've received the correct number of arguments
 	if (argc != 2) {
-		cerr << "Please enter 1 argument for the level filepath" << endl;
+		cerr << "Please enter one argument for the level filepath." << endl;
 		return 1;
 	}
 
@@ -28,7 +28,19 @@ int main(int argc, char *argv[]) {
 	Game ourGame;
 	int loadSuccess = ourGame.LoadData(filepath);
 	if (loadSuccess != 0) {
-		cerr << "File failed to open with code " << loadSuccess << ". Aborting." << endl;
+		switch (loadSuccess) {
+			case 1:
+				cerr << "Could not open file. Aborting." << endl;
+				break;
+
+			case 2:
+				cerr << "File improperly formatted. Aborting." << endl;
+				break;
+
+			default:
+				cerr << "File failed to open with error code " << loadSuccess << ". Aborting." << endl;
+				break;
+		}
 		return 1;
 	}
 

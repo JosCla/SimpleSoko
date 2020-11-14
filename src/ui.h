@@ -14,10 +14,6 @@
 
 class UI {
 	public:
-		WINDOW *GameWin;
-		WINDOW *DataWin;
-		WINDOW *ControlWin;
-
 		UI();
 		UI(WINDOW *gameWin, WINDOW *dataWin, WINDOW *controlWin);
 
@@ -26,6 +22,11 @@ class UI {
 		void DrawGameWin(Game &game);
 		void DrawDataWin(const std::vector<Metadata> &data);
 		void DrawControlWin();
+
+	private:
+		WINDOW *GameWin;
+		WINDOW *DataWin;
+		WINDOW *ControlWin;
 };
 
 #endif // UI_H
