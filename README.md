@@ -1,5 +1,5 @@
 # SimpleSoko
-A basic terminal-based Sokoban engine written in C++, using the ncurses library.
+A simple terminal-based Sokoban engine written in C++, using the ncurses library.
 
 ## Usage
 1. Install the ncurses development library
@@ -30,7 +30,7 @@ Q - Quit game
 ### File format
 The first three numbers in the file represent the height of the level, the width of the level, and the number of metadata entries to read.
 
-The next few rows (specified by the height) represent the level itself. Here is what each character represents:
+The next few rows (number of rows specified by the level height) represent the level itself. Here is what each character represents:
 ```
 [#] - Wall
 [ ] - Floor
@@ -41,7 +41,7 @@ The next few rows (specified by the height) represent the level itself. Here is 
 [*] - Box on Target
 ```
 
-The final few rows (specified by the number of metadata entries) represent the metadata, with the text before the semicolon being the name of the entry, and the text after the semicolon being the value of the entry.
+The final few rows (number of rows specified by the number of metadata entries) represent the metadata, with the text before the colon being the name of the entry, and the text after the colon being the value of the entry.
 
 A sample level file (found at `levels/sample.soks`) follows:
 ```
@@ -63,7 +63,7 @@ Then, use the following to play the level:
 ./soks [path to level file]
 ```
 
-For example, if your level file was located at `levels/sample.soks`, you would use the following:
+For example, if your level file was located at `levels/sample.soks`, you would use:
 ```console
 ./soks levels/sample.soks
 ```
